@@ -107,7 +107,19 @@ var wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray(wordsUnique) {}
+function uniquifyArray(wordsUnique) {
+
+  if (wordsUnique < 1) return undefined;
+
+  var cleanArray = [];
+
+  for (var i = 0; i < wordsUnique.length; i++) {
+    if (cleanArray.indexOf(wordsUnique[i]) == -1) {
+      cleanArray.push(wordsUnique[i]);
+    }
+  }
+  return cleanArray;
+}
 
 
 // Finding Elements
@@ -121,6 +133,25 @@ var wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(wordsFind, wordToSearch) {
+
+  var caseState = 0 ; // 0 if false 1 if true
+  if (wordsFind.length == 0) var caseState = 0;
+  
+  for (var i = 0; i < wordsFind.length; i++) {
+    if (wordToSearch == wordsFind[i] ) {
+      var caseState = 1
+    }
+  } 
+  
+  if (caseState == 0) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
 
 // Counting Repetion
 var wordsCount = [
@@ -136,6 +167,22 @@ var wordsCount = [
   'disobedience',
   'matter'
 ];
+
+
+function howManyTimes(wordsCount, wordToSearch) {
+
+  var caseSum = 0 ; 
+  if (wordsCount.length == 0) return false;
+  
+  for (var i = 0; i < wordsCount.length; i++) {
+    if (wordToSearch == wordsCount[i] ) {
+      caseSum += 1;
+    }
+  } 
+    return caseSum;
+}
+
+
 // Bonus Quest
 
 var matrix = [
